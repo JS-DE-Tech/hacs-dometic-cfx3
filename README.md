@@ -1,20 +1,26 @@
-# Dometic CFX3 WiFi integration for Home Assistant
+# Dometic CFX3 WiFi Integration for Home Assistant
 
 [![Validate](https://github.com/JS-DE-Tech/hacs-dometic-cfx3/actions/workflows/validate.yml/badge.svg)](https://github.com/JS-DE-Tech/hacs-dometic-cfx3/actions/workflows/validate.yml)
 
-Home Assistant custom integration for Dometic CFX3 coolers. The integration communicates directly with the cooler over the local network using the DDMP protocol on TCP port `13142`. It does not use a cloud service and does not add external Python dependencies.
+This custom Home Assistant integration allows you to connect Dometic CFX3 WiFi coolers (such as the CFX3 35, CFX3 45, CFX3 55 and related models) directly to Home Assistant using the local DDMP protocol.
+
+The integration communicates locally over your network and does not require any cloud services, internet access or third-party accounts.
 
 ## Features
 
-- Local-only communication with a Dometic CFX3 cooler
-- Automatic discovery within a configurable IPv4 network or manual setup by IP address
-- Automatic rediscovery by device name after an IP address change when a discovery network is configured
-- Cooler power control and target-temperature control
-- Battery-protection mode selection
-- Sensors for temperatures, battery voltage, power source, device name, IP address, and the last successful communication
-- Binary sensors for cooler power and compressor state
-- Configurable polling interval between 60 and 360 seconds
-- Local integration icon and logo for Home Assistant 2026.3 and newer
+- Local WiFi communication
+- No cloud dependency
+- Monitor actual temperature
+- Monitor target temperature
+- Monitor battery voltage
+- Detect power source (AC / DC)
+- Monitor compressor status
+- Monitor cooler power status
+- Configure battery protection mode
+- Turn cooler on or off
+- Config Flow setup
+- HACS compatible
+- German and English translations
 
 ## Requirements
 

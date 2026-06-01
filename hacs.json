@@ -2,5 +2,6 @@
   "name": "Dometic CFX3 WiFi",
   "content_in_root": false,
   "homeassistant": "2025.1.0",
-  "render_readme": true
+  "render_readme": true,
+  "description": "Connect Dometic CFX3 WiFi coolers directly to Home Assistant via local WiFi. Monitor temperatures, battery status and power source, and control cooling settings without cloud services."
 }

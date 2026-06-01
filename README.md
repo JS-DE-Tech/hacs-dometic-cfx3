@@ -95,6 +95,12 @@ No copy into Home Assistant's `www` directory is needed.
 
 The integration manifest is prepared for release `v1.0.0`. For HACS release selection, publish a GitHub release with the tag `v1.0.0` after the validation workflow succeeds.
 
-## Support
+## Reporting issues
 
 Please report problems through the [GitHub issue tracker](https://github.com/JS-DE-Tech/hacs-dometic-cfx3/issues). Include your Home Assistant version, cooler model, configuration mode (scan or manual), and relevant log messages.
+
+## Support
+
+If this project is useful to you, you can support its continued development and maintenance:
+
+[![Support via PayPal](https://img.shields.io/badge/Support%20via-PayPal-0070BA?logo=paypal&logoColor=white)](https://paypal.me/JensSaffrich)

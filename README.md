@@ -10,6 +10,7 @@ Home Assistant integration for Dometic CFX3 coolers using the local DDMP protoco
 [![HACS](https://img.shields.io/badge/HACS-Custom%20Repository-41BDF5)](https://hacs.xyz/)
 [![Protocol](https://img.shields.io/badge/protocol-local%20DDMP-success)](#overview)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
+[![Support via PayPal](https://img.shields.io/badge/Support%20via-PayPal-0070BA?logo=paypal&logoColor=white)](https://paypal.me/JensSaffrich)
 
 ## Overview
 

@@ -1,0 +1,6 @@
+{
+  "name": "Dometic CFX3 WiFi",
+  "content_in_root": false,
+  "homeassistant": "2025.1.0",
+  "render_readme": true
+}

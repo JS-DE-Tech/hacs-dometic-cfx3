@@ -1,0 +1,116 @@
+{
+  "title": "Dometic CFX3",
+  "config": {
+    "step": {
+      "user": {
+        "title": "Dometic CFX3 einrichten",
+        "description": "Suche im Netzwerk oder füge die Kühlbox manuell per IP hinzu.",
+        "data": {
+          "use_scan": "Netzwerksuche verwenden",
+          "network": "Netzwerk/CIDR für Suche",
+          "host": "IP-Adresse bei manueller Einrichtung",
+          "port": "TCP-Port"
+        }
+      },
+      "select_device": {
+        "title": "Dometic CFX3 auswählen",
+        "description": "Mehrere Kühlboxen gefunden.",
+        "data": {
+          "device": "Gerät"
+        }
+      }
+    },
+    "error": {
+      "cannot_connect": "Verbindung zur Kühlbox fehlgeschlagen.",
+      "host_required": "Bei manueller Einrichtung ist eine IP-Adresse erforderlich.",
+      "no_devices_found": "Keine Dometic CFX3 im angegebenen Netzwerk gefunden.",
+      "unknown": "Unbekannter Fehler."
+    },
+    "abort": {
+      "already_configured": "Diese Kühlbox ist bereits eingerichtet."
+    }
+  },
+  "options": {
+    "step": {
+      "init": {
+        "title": "Dometic CFX3 Optionen",
+        "description": "Abfrageintervall für die Kühlbox festlegen.",
+        "data": {
+          "scan_interval": "Abfrageintervall in Sekunden"
+        }
+      }
+    }
+  },
+  "entity": {
+    "climate": {
+      "cooler": {
+        "name": "Kühlbetrieb"
+      }
+    },
+    "sensor": {
+      "battery_voltage": {
+        "name": "Batteriespannung"
+      },
+      "current_temperature": {
+        "name": "Ist-Temperatur"
+      },
+      "target_temperature": {
+        "name": "Soll-Temperatur"
+      },
+      "power_source": {
+        "name": "Spannungsquelle"
+      },
+      "device_name": {
+        "name": "Gerätename"
+      },
+      "ip_address": {
+        "name": "IP-Adresse"
+      },
+      "last_communication": {
+        "name": "Letzte Kommunikation"
+      }
+    },
+    "binary_sensor": {
+      "compressor": {
+        "name": "Kompressor-Status"
+      },
+      "power": {
+        "name": "Kühlbox-Status"
+      }
+    },
+    "switch": {
+      "cooler_power": {
+        "name": "Kühlbox Ein/Aus"
+      }
+    },
+    "select": {
+      "battery_protection": {
+        "name": "Batteriewächter"
+      }
+    },
+    "number": {
+      "poll_interval": {
+        "name": "Abfrageintervall"
+      }
+    }
+  },
+  "state": {
+    "power_source": {
+      "ac": "Netz (AC)",
+      "dc": "Batterie (DC)"
+    },
+    "compressor": {
+      "on": "In Betrieb",
+      "off": "Außer Betrieb"
+    },
+    "power": {
+      "on": "Ein",
+      "off": "Aus"
+    },
+    "battery_protection": {
+      "low": "Niedrig",
+      "med": "Mittel",
+      "high": "Hoch"
+    }
+  }
+}

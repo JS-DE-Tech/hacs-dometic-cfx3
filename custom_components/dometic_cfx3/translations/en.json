@@ -1,0 +1,116 @@
+{
+  "title": "Dometic CFX3",
+  "config": {
+    "step": {
+      "user": {
+        "title": "Set up Dometic CFX3",
+        "description": "Search the network or add the cooler manually by IP address.",
+        "data": {
+          "use_scan": "Use network scan",
+          "network": "Network/CIDR for discovery",
+          "host": "IP address for manual setup",
+          "port": "TCP port"
+        }
+      },
+      "select_device": {
+        "title": "Select Dometic CFX3",
+        "description": "Multiple coolers were found.",
+        "data": {
+          "device": "Device"
+        }
+      }
+    },
+    "error": {
+      "cannot_connect": "Could not connect to the cooler.",
+      "host_required": "An IP address is required for manual setup.",
+      "no_devices_found": "No Dometic CFX3 cooler was found on the specified network.",
+      "unknown": "Unknown error."
+    },
+    "abort": {
+      "already_configured": "This cooler is already configured."
+    }
+  },
+  "options": {
+    "step": {
+      "init": {
+        "title": "Dometic CFX3 options",
+        "description": "Set the polling interval for the cooler.",
+        "data": {
+          "scan_interval": "Polling interval in seconds"
+        }
+      }
+    }
+  },
+  "entity": {
+    "climate": {
+      "cooler": {
+        "name": "Cooling"
+      }
+    },
+    "sensor": {
+      "battery_voltage": {
+        "name": "Battery voltage"
+      },
+      "current_temperature": {
+        "name": "Current temperature"
+      },
+      "target_temperature": {
+        "name": "Target temperature"
+      },
+      "power_source": {
+        "name": "Power source"
+      },
+      "device_name": {
+        "name": "Device name"
+      },
+      "ip_address": {
+        "name": "IP address"
+      },
+      "last_communication": {
+        "name": "Last communication"
+      }
+    },
+    "binary_sensor": {
+      "compressor": {
+        "name": "Compressor status"
+      },
+      "power": {
+        "name": "Cooler status"
+      }
+    },
+    "switch": {
+      "cooler_power": {
+        "name": "Cooler on/off"
+      }
+    },
+    "select": {
+      "battery_protection": {
+        "name": "Battery protection"
+      }
+    },
+    "number": {
+      "poll_interval": {
+        "name": "Polling interval"
+      }
+    }
+  },
+  "state": {
+    "power_source": {
+      "ac": "Mains (AC)",
+      "dc": "Battery (DC)"
+    },
+    "compressor": {
+      "on": "Running",
+      "off": "Stopped"
+    },
+    "power": {
+      "on": "On",
+      "off": "Off"
+    },
+    "battery_protection": {
+      "low": "Low",
+      "med": "Medium",
+      "high": "High"
+    }
+  }
+}

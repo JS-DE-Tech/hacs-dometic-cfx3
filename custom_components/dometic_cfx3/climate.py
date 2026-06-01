@@ -7,7 +7,7 @@ from homeassistant.core import HomeAssistant
 from homeassistant.helpers.entity import DeviceInfo
 from homeassistant.helpers.update_coordinator import CoordinatorEntity
 
-from .const import CONF_NAME, DOMAIN, ENTITY_PICTURE
+from .const import CONF_NAME, DOMAIN
 from .coordinator import DometicCfx3Coordinator
 
 
@@ -18,7 +18,7 @@ async def async_setup_entry(hass: HomeAssistant, entry: ConfigEntry, async_add_e
 
 class DometicCfx3Climate(CoordinatorEntity[DometicCfx3Coordinator], ClimateEntity):
     _attr_has_entity_name = True
-    _attr_name = "Kühlbetrieb"
+    _attr_translation_key = "cooler"
     _attr_temperature_unit = UnitOfTemperature.CELSIUS
     _attr_min_temp = -22
     _attr_max_temp = 10
@@ -39,11 +39,6 @@ class DometicCfx3Climate(CoordinatorEntity[DometicCfx3Coordinator], ClimateEntit
     def device_info(self) -> DeviceInfo:
         name = self.entry.data.get(CONF_NAME, "Dometic CFX3")
         return DeviceInfo(identifiers={(DOMAIN, name)}, name=name, manufacturer="Dometic", model="CFX3")
-
-
-    @property
-    def entity_picture(self):
-        return ENTITY_PICTURE
 
     @property
     def current_temperature(self):

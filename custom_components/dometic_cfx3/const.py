@@ -24,5 +24,3 @@ BATTERY_PROTECTION_OPTIONS = ["LOW", "MED", "HIGH"]
 BATTERY_PROTECTION_TO_VALUE = {"LOW": 0, "MED": 1, "HIGH": 2}
 VALUE_TO_BATTERY_PROTECTION = {0: "LOW", 1: "MED", 2: "HIGH"}
 VALUE_TO_POWER_SOURCE = {0: "Netz (AC)", 1: "Batterie (DC)"}
-
-ENTITY_PICTURE = "/local/dometic_cfx3_device.png"

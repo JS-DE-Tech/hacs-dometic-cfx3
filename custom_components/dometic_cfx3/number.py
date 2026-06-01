@@ -7,7 +7,7 @@ from homeassistant.core import HomeAssistant
 from homeassistant.helpers.entity import DeviceInfo, EntityCategory
 from homeassistant.helpers.update_coordinator import CoordinatorEntity
 
-from .const import CONF_NAME, CONF_SCAN_INTERVAL, DEFAULT_SCAN_INTERVAL, DOMAIN, ENTITY_PICTURE
+from .const import CONF_NAME, CONF_SCAN_INTERVAL, DEFAULT_SCAN_INTERVAL, DOMAIN
 from .coordinator import DometicCfx3Coordinator
 
 
@@ -18,7 +18,7 @@ async def async_setup_entry(hass: HomeAssistant, entry: ConfigEntry, async_add_e
 
 class DometicScanIntervalNumber(CoordinatorEntity[DometicCfx3Coordinator], NumberEntity):
     _attr_has_entity_name = True
-    _attr_name = "Abfrageintervall"
+    _attr_translation_key = "poll_interval"
     _attr_icon = "mdi:timer-sync-outline"
     _attr_native_min_value = 60
     _attr_native_max_value = 360
@@ -36,10 +36,6 @@ class DometicScanIntervalNumber(CoordinatorEntity[DometicCfx3Coordinator], Numbe
     def device_info(self) -> DeviceInfo:
         name = self.entry.data.get(CONF_NAME, "Dometic CFX3")
         return DeviceInfo(identifiers={(DOMAIN, name)}, name=name, manufacturer="Dometic", model="CFX3")
-
-    @property
-    def entity_picture(self):
-        return ENTITY_PICTURE
 
     @property
     def native_value(self):

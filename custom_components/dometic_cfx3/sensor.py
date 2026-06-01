@@ -7,7 +7,7 @@ from homeassistant.core import HomeAssistant
 from homeassistant.helpers.entity import DeviceInfo
 from homeassistant.helpers.update_coordinator import CoordinatorEntity
 
-from .const import CONF_NAME, DOMAIN, ENTITY_PICTURE
+from .const import CONF_NAME, DOMAIN
 from .coordinator import DometicCfx3Coordinator
 
 
@@ -34,15 +34,11 @@ class _BaseSensor(CoordinatorEntity[DometicCfx3Coordinator], SensorEntity):
     @property
     def device_info(self) -> DeviceInfo:
         name = self.entry.data.get(CONF_NAME, "Dometic CFX3")
-        return DeviceInfo(identifiers={(DOMAIN, name)}, name=name, manufacturer="Dometic", model="CFX3 35")
-
-    @property
-    def entity_picture(self):
-        return ENTITY_PICTURE
+        return DeviceInfo(identifiers={(DOMAIN, name)}, name=name, manufacturer="Dometic", model="CFX3")
 
 
 class DometicCurrentTemperatureSensor(_BaseSensor):
-    _attr_name = "Ist-Temperatur"
+    _attr_translation_key = "current_temperature"
     _attr_icon = "mdi:thermometer"
     _attr_device_class = SensorDeviceClass.TEMPERATURE
     _attr_native_unit_of_measurement = UnitOfTemperature.CELSIUS
@@ -60,7 +56,7 @@ class DometicCurrentTemperatureSensor(_BaseSensor):
 
 
 class DometicTargetTemperatureSensor(_BaseSensor):
-    _attr_name = "Soll-Temperatur"
+    _attr_translation_key = "target_temperature"
     _attr_icon = "mdi:thermometer-check"
     _attr_device_class = SensorDeviceClass.TEMPERATURE
     _attr_native_unit_of_measurement = UnitOfTemperature.CELSIUS
@@ -78,7 +74,7 @@ class DometicTargetTemperatureSensor(_BaseSensor):
 
 
 class DometicBatteryVoltageSensor(_BaseSensor):
-    _attr_name = "Batteriespannung"
+    _attr_translation_key = "battery_voltage"
     _attr_suggested_display_precision = 1
     _attr_device_class = SensorDeviceClass.VOLTAGE
     _attr_native_unit_of_measurement = UnitOfElectricPotential.VOLT
@@ -94,7 +90,7 @@ class DometicBatteryVoltageSensor(_BaseSensor):
 
 
 class DometicPowerSourceSensor(_BaseSensor):
-    _attr_name = "Spannungsquelle"
+    _attr_translation_key = "power_source"
     _attr_icon = "mdi:power-plug"
 
     def __init__(self, coordinator, entry) -> None:
@@ -107,7 +103,7 @@ class DometicPowerSourceSensor(_BaseSensor):
 
 
 class DometicDeviceNameSensor(_BaseSensor):
-    _attr_name = "Gerätename"
+    _attr_translation_key = "device_name"
     _attr_icon = "mdi:label-outline"
 
     def __init__(self, coordinator, entry) -> None:
@@ -120,7 +116,7 @@ class DometicDeviceNameSensor(_BaseSensor):
 
 
 class DometicIpAddressSensor(_BaseSensor):
-    _attr_name = "IP-Adresse"
+    _attr_translation_key = "ip_address"
     _attr_icon = "mdi:ip-network"
 
     def __init__(self, coordinator, entry) -> None:
@@ -133,7 +129,7 @@ class DometicIpAddressSensor(_BaseSensor):
 
 
 class DometicLastCommunicationSensor(_BaseSensor):
-    _attr_name = "Letzte Kommunikation"
+    _attr_translation_key = "last_communication"
     _attr_device_class = SensorDeviceClass.TIMESTAMP
     _attr_icon = "mdi:clock-check-outline"
 

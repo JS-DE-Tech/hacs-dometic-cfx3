@@ -6,7 +6,7 @@ from homeassistant.core import HomeAssistant
 from homeassistant.helpers.entity import DeviceInfo
 from homeassistant.helpers.update_coordinator import CoordinatorEntity
 
-from .const import CONF_NAME, DOMAIN, ENTITY_PICTURE
+from .const import CONF_NAME, DOMAIN
 from .coordinator import DometicCfx3Coordinator
 
 
@@ -30,13 +30,9 @@ class _BaseBinarySensor(CoordinatorEntity[DometicCfx3Coordinator], BinarySensorE
         name = self.entry.data.get(CONF_NAME, "Dometic CFX3")
         return DeviceInfo(identifiers={(DOMAIN, name)}, name=name, manufacturer="Dometic", model="CFX3")
 
-    @property
-    def entity_picture(self):
-        return ENTITY_PICTURE
-
 
 class DometicPowerBinarySensor(_BaseBinarySensor):
-    _attr_name = "Kühlbox-Status"
+    _attr_translation_key = "power"
     _attr_device_class = BinarySensorDeviceClass.POWER
 
     def __init__(self, coordinator, entry) -> None:
@@ -49,7 +45,7 @@ class DometicPowerBinarySensor(_BaseBinarySensor):
 
 
 class DometicCompressorBinarySensor(_BaseBinarySensor):
-    _attr_name = "Kompressor-Status"
+    _attr_translation_key = "compressor"
     _attr_device_class = BinarySensorDeviceClass.RUNNING
 
     def __init__(self, coordinator, entry) -> None:

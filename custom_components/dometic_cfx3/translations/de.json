@@ -58,7 +58,11 @@
         "name": "Soll-Temperatur"
       },
       "power_source": {
-        "name": "Spannungsquelle"
+        "name": "Spannungsquelle",
+        "state": {
+          "ac": "Netz (AC)",
+          "dc": "Batterie (DC)"
+        }
       },
       "device_name": {
         "name": "Gerätename"
@@ -72,10 +76,18 @@
     },
     "binary_sensor": {
       "compressor": {
-        "name": "Kompressor-Status"
+        "name": "Kompressor-Status",
+        "state": {
+          "on": "In Betrieb",
+          "off": "Außer Betrieb"
+        }
       },
       "power": {
-        "name": "Kühlbox-Status"
+        "name": "Kühlbox-Status",
+        "state": {
+          "on": "Ein",
+          "off": "Aus"
+        }
       }
     },
     "switch": {
@@ -85,32 +97,18 @@
     },
     "select": {
       "battery_protection": {
-        "name": "Batteriewächter"
+        "name": "Batteriewächter",
+        "state": {
+          "low": "Niedrig",
+          "med": "Mittel",
+          "high": "Hoch"
+        }
       }
     },
     "number": {
       "poll_interval": {
         "name": "Abfrageintervall"
       }
-    }
-  },
-  "state": {
-    "power_source": {
-      "ac": "Netz (AC)",
-      "dc": "Batterie (DC)"
-    },
-    "compressor": {
-      "on": "In Betrieb",
-      "off": "Außer Betrieb"
-    },
-    "power": {
-      "on": "Ein",
-      "off": "Aus"
-    },
-    "battery_protection": {
-      "low": "Niedrig",
-      "med": "Mittel",
-      "high": "Hoch"
     }
   }
 }

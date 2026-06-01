@@ -58,7 +58,11 @@
         "name": "Target temperature"
       },
       "power_source": {
-        "name": "Power source"
+        "name": "Power source",
+        "state": {
+          "ac": "Mains (AC)",
+          "dc": "Battery (DC)"
+        }
       },
       "device_name": {
         "name": "Device name"
@@ -72,10 +76,18 @@
     },
     "binary_sensor": {
       "compressor": {
-        "name": "Compressor status"
+        "name": "Compressor status",
+        "state": {
+          "on": "Running",
+          "off": "Stopped"
+        }
       },
       "power": {
-        "name": "Cooler status"
+        "name": "Cooler status",
+        "state": {
+          "on": "On",
+          "off": "Off"
+        }
       }
     },
     "switch": {
@@ -85,32 +97,18 @@
     },
     "select": {
       "battery_protection": {
-        "name": "Battery protection"
+        "name": "Battery protection",
+        "state": {
+          "low": "Low",
+          "med": "Medium",
+          "high": "High"
+        }
       }
     },
     "number": {
       "poll_interval": {
         "name": "Polling interval"
       }
-    }
-  },
-  "state": {
-    "power_source": {
-      "ac": "Mains (AC)",
-      "dc": "Battery (DC)"
-    },
-    "compressor": {
-      "on": "Running",
-      "off": "Stopped"
-    },
-    "power": {
-      "on": "On",
-      "off": "Off"
-    },
-    "battery_protection": {
-      "low": "Low",
-      "med": "Medium",
-      "high": "High"
     }
   }
 }

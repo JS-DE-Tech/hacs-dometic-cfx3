@@ -236,7 +236,7 @@ def probe_host(host: str, port: int = DEFAULT_PORT, timeout: float = 0.6) -> dic
     client = DometicCfx3Client(host, port, timeout=timeout)
     try:
         name_payload = client.read_topic(TOPIC_NAME)
-    except DometicCfx3Error:
+    except (DometicCfx3Error, OSError):
         return None
     name = _decode_ascii(name_payload or [])
     if not name:

@@ -1,0 +1,39 @@
+name: Validate
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  local:
+    name: Local checks
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Validate Python syntax
+        run: python -m compileall -q custom_components/dometic_cfx3
+
+      - name: Validate JSON files
+        run: |
+          python -m json.tool hacs.json > /dev/null
+          python -m json.tool custom_components/dometic_cfx3/manifest.json > /dev/null
+          python -m json.tool custom_components/dometic_cfx3/strings.json > /dev/null
+          python -m json.tool custom_components/dometic_cfx3/translations/de.json > /dev/null
+          python -m json.tool custom_components/dometic_cfx3/translations/en.json > /dev/null
+
+  hacs:
+    name: HACS validation
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: hacs/action@main
+        with:
+          category: integration
+
+  hassfest:
+    name: Hassfest validation
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: home-assistant/actions/hassfest@master

@@ -5,7 +5,7 @@ import voluptuous as vol
 from homeassistant import config_entries
 from homeassistant.core import callback
 
-from .api import DometicCfx3Client, DometicCfx3Error, discover_devices, probe_host
+from .api import discover_devices, probe_host
 from .const import (
     CONF_HOST,
     CONF_NAME,

@@ -1,12 +1,12 @@
 {
   "domain": "dometic_cfx3",
   "name": "Dometic CFX3",
-  "codeowners": [],
+  "codeowners": ["@JS-DE-Tech"],
   "config_flow": true,
   "dependencies": [],
-  "documentation": "https://github.com/local/dometic_cfx3",
+  "documentation": "https://github.com/JS-DE-Tech/hacs-dometic-cfx3",
   "iot_class": "local_polling",
-  "issue_tracker": "https://github.com/local/dometic_cfx3/issues",
+  "issue_tracker": "https://github.com/JS-DE-Tech/hacs-dometic-cfx3/issues",
   "requirements": [],
-  "version": "0.6.1"
+  "version": "1.0.0"
 }

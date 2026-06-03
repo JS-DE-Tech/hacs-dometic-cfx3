@@ -1,7 +1,7 @@
 # Dometic CFX3 WiFi
 
 <p align="center">
-  <img src="custom_components/dometic_cfx3/brand/logo.png" alt="Dometic CFX3 cooler" width="320">
+  <img src="https://raw.githubusercontent.com/JS-DE-Tech/hacs-dometic-cfx3/main/docs/images/dometic_cfx.png" alt="Dometic CFX3 cooler" width="320">
 </p>
 
 Home Assistant integration for Dometic CFX3 coolers using the local DDMP protocol.
@@ -9,7 +9,7 @@ Home Assistant integration for Dometic CFX3 coolers using the local DDMP protoco
 [![Home Assistant](https://img.shields.io/badge/Home%20Assistant-Custom%20Integration-41BDF5?logo=home-assistant&logoColor=white)](https://www.home-assistant.io/)
 [![HACS](https://img.shields.io/badge/HACS-Custom%20Repository-41BDF5)](https://hacs.xyz/)
 [![Protocol](https://img.shields.io/badge/protocol-local%20DDMP-success)](#overview)
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow)](https://github.com/JS-DE-Tech/hacs-dometic-cfx3/blob/main/LICENSE)
 [![Support via PayPal](https://img.shields.io/badge/Support%20via-PayPal-0070BA?logo=paypal&logoColor=white)](https://paypal.me/JensSaffrich)
 
 ## Overview
